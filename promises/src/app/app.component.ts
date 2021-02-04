@@ -39,12 +39,19 @@ export class AppComponent implements OnInit {
         }, 1000);
       }
       else {
-        reject('não deu certo');
+        reject('não deu certo você não é o Eduardo');
       }
     })
   }
   ngOnInit(): void {
-    this.minhaPromise('Eduardo')
-      .then(result => console.log(result));
+   /* this.minhaPromise('Eduardo')
+      .then(result => console.log(result)); */
+      
+      // mostrando o erro 
+      this.minhaPromise('Miguel')
+      .then(result => console.log(result))
+      // tratando o erro
+      .catch(erro => console.log(erro))
   }
 }
+
