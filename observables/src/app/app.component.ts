@@ -49,16 +49,18 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.minhaObservable('')
+   /* this.minhaObservable('')
       .subscribe(result => console.log(result),
       // tratando o erro
-      erro => console.log(erro));
+      erro => console.log(erro)); */
 
       // observador
       const observer = {
-        next: valor => console.log('Next', valor),
-        erro: erro => console.log('Erro', erro),
+        next: valor => console.log('Next: ', valor),
+        erro: erro => console.log('Erro: ', erro),
         complete: () => console.log('acabou')
       }
+      const obs = this.minhaObservable('Eduardo');
+      obs.subscribe(observer);
   }
 }
